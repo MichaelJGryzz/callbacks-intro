@@ -4,13 +4,13 @@ const findWaldo = function (names, found) {
   for (let i = 0; i < names.length; i++) {
     let name = names[i];
     if (name === "Waldo") {
-      found(); // execute callback
+      found(i); // execute callback with index
     }
   }
 };
 
-const actionWhenFound = function () {
-  console.log("Found him!");
+const actionWhenFound = function (index) {
+  console.log(`Found Waldo at index ${index}`);
 };
 
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
